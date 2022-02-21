@@ -1,0 +1,48 @@
+.key-container {
+  width: 510px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.key-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 58px;
+  border-radius: 4px;
+  border: none;
+  background-color: #818384;
+  margin: 4px;
+}
+
+.key-container button:nth-child(11) {
+  margin-left: 30px;
+}
+.key-container button:nth-child(11),
+.key-container button:nth-child(12),
+.key-container button:nth-child(13),
+.key-container button:nth-child(14),
+.key-container button:nth-child(15),
+.key-container button:nth-child(16),
+.key-container button:nth-child(17),
+.key-container button:nth-child(18),
+.key-container button:nth-child(19),
+.key-container button:nth-child(20),
+.key-container button:nth-child(21) {
+  width: 33px;
+}
+.key-container button:nth-child(23),
+.key-container button:nth-child(24),
+.key-container button:nth-child(25),
+.key-container button:nth-child(26),
+.key-container button:nth-child(27),
+.key-container button:nth-child(28),
+.key-container button:nth-child(29),
+.key-container button:nth-child(30) {
+  width: 36px;
+}
+.key-container button:nth-child(22),
+.key-container button:nth-child(31) {
+  width: 68px;
+}
