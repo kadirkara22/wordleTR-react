@@ -1,14 +1,17 @@
 .tile-container {
+  position: relative;
   width: 330px;
-  margin-bottom: 30px;
+  margin: 12px 0;
 }
 .tile-container div {
   display: flex;
 }
 
 .tile-container .tile {
-  width: 62px;
-  height: 62px;
+  width: 56px;
+  height: 56px;
+  font-size: 30px;
+  font-weight: bold;
   border: 2px solid#3a3a3c;
   box-sizing: border-box;
   display: flex;
@@ -32,7 +35,40 @@
     transform: rotateX(0deg);
   }
 }
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translate(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate(-4px);
+  }
+  40%,
+  60% {
+    transform: translate(4px);
+  }
+}
 
+.tile.PopIn {
+  animation: PopIn 0.1s;
+}
+@keyframes PopIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  40% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
 .grey-overlay {
   background-color: #3a3a3c !important;
   border: none !important;

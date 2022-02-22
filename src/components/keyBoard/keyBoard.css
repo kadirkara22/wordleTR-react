@@ -14,6 +14,7 @@
   border: none;
   background-color: #818384;
   margin: 4px;
+  cursor: pointer;
 }
 
 .key-container button:nth-child(11) {
