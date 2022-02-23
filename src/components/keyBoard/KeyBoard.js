@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './keyBoard.css'
 import Keys from '../../api/keyBoard.json'
-import { useDispatch } from 'react-redux'
-import { addLetter, checkRow, deleteLetter } from '../../redux/lettersSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { addLetter, checkRow, deleteLetter, flipTile } from '../../redux/lettersSlice'
 const KeyBoard = () => {
+    const isGameOver = useSelector((state) => state.letters.isGameOver)
+    const keyColor = useSelector((state) => state.letters.keyColor)
     const [keys, setKey] = useState([])
 
     const dispatch = useDispatch()
@@ -11,25 +13,37 @@ const KeyBoard = () => {
         setKey(Keys.keys)
     }, [])
 
-    const handleClick = (letter) => {
+    const addColorKey = () => {
 
-        if (letter === '«') {
-            dispatch(deleteLetter())
-            return
-        }
 
-        if (letter === 'ENTER') {
-            dispatch(checkRow())
-            return
-        }
-
-        dispatch(addLetter(letter))
     }
+    addColorKey()
+    console.log(keyColor)
+    const handleClick = (letter) => {
+        if (!isGameOver) {
+            if (letter === '«') {
+                dispatch(deleteLetter())
+                return
+            }
+
+            if (letter === 'ENTER') {
+                dispatch(flipTile())
+                dispatch(checkRow())
+
+                return
+            }
+
+            dispatch(addLetter(letter))
+        }
+
+    }
+
     return (
         <div className="key-container">
             {
                 keys.map((item, index) => (
-                    <button className="key-container button" key={index} id={item} onClick={() => handleClick(item)}>{item}</button>
+
+                    <button className={item.color} key={index} id={item} onClick={() => handleClick(item)}>{item}</button>
                 ))
 
             }
