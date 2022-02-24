@@ -80,8 +80,6 @@ export const letterSlice = createSlice({
             const rowTiles = state.guessRows[state.currentRow]
             if (!Words.words.includes(guess)) {
                 state.message = 'Kelime listesinde yok'
-
-
                 rowTiles.forEach((tile, index) => {
                     state.shake[state.currentRow][index] = 'shake'
                 })
