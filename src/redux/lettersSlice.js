@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Words from '../api/word.json'
-import Keys from '../api/keyBoard.json'
+import Keys from '../api/keyBoard.json';
+
+
 export const letterSlice = createSlice({
     name: 'letters',
     initialState: {
@@ -8,8 +10,7 @@ export const letterSlice = createSlice({
         currentRow: 0,
         currentTile: 0,
         isGameOver: false,
-        key: Keys.keys,
-        keyColor: [],
+        Keys: Keys.keys,
         guessRows: [
             ['', '', '', '', ''],
             ['', '', '', '', ''],
@@ -144,7 +145,9 @@ export const letterSlice = createSlice({
                 rowTiles.forEach((tile, index) => {
                     state.flip[state.currentRow][index] = 'flip'
                     state.type[state.currentRow][index] = guess[index].color
-                    state.keyColor.push(guess[index])
+                    state.Keys = state.Keys.find(item => item.key === guess[index].letter) ?
+                        state.Keys.map(item => item.key === guess[index].letter ? { ...item, type: guess[index].color } : item)
+                        : [...state.Keys]
                 })
             }
 

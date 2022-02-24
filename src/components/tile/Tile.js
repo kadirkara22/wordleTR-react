@@ -10,14 +10,6 @@ const Tile = () => {
     const shake = useSelector((state) => state.letters.shake)
     const win = useSelector((state) => state.letters.win)
 
-    console.log(type)
-    console.log(wordle)
-    console.log(flip)
-    console.log(shake)
-    console.log(win)
-
-
-
     return (
         <div className="tile-container">
             {
@@ -28,7 +20,6 @@ const Tile = () => {
                             guessRow.map((guess, guessIndex) => (
 
                                 <div key={guessIndex} className={`${guess ? "tile PopIn" : "tile"} ${shake[guessRowIndex][guessIndex]} ${flip[guessRowIndex][guessIndex]} ${win[guessRowIndex][guessIndex]} ${type[guessRowIndex][guessIndex]} `} data={guess} id={`guessRow-${guessRowIndex}-tile-${guessIndex}`}>{guess}</div>
-
 
                             ))
 
