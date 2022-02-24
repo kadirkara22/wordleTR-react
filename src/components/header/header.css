@@ -6,11 +6,7 @@
   height: 51px;
   border-bottom: solid 1px #3a3a3c;
 }
-@media (max-width: 500px) {
-  .title-container {
-    width: 375px;
-  }
-}
+
 .title {
   font-weight: 700;
   font-size: 36px;
@@ -24,4 +20,14 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+@media (max-width: 500px) {
+  .title-container {
+    width: 375px;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 0.1rem;
+  }
 }
