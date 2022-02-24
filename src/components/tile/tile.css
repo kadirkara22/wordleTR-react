@@ -5,6 +5,8 @@
 }
 .tile-container div {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tile-container .tile {

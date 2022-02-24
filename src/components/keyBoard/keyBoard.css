@@ -2,6 +2,8 @@
   width: 510px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .key-container button {
@@ -47,7 +49,48 @@
 .key-container button:nth-child(31) {
   width: 68px;
 }
-
+@media (max-width: 500px) {
+  .key-container {
+    width: 375px;
+  }
+  .key-container button {
+    width: 30px;
+    margin: 3px;
+  }
+  .key-container button:nth-child(11) {
+    margin-left: 5px;
+  }
+  .key-container button:nth-child(11),
+  .key-container button:nth-child(12),
+  .key-container button:nth-child(13),
+  .key-container button:nth-child(14),
+  .key-container button:nth-child(15),
+  .key-container button:nth-child(16),
+  .key-container button:nth-child(17),
+  .key-container button:nth-child(18),
+  .key-container button:nth-child(19),
+  .key-container button:nth-child(20),
+  .key-container button:nth-child(21) {
+    width: 24px;
+  }
+  .key-container button:nth-child(23),
+  .key-container button:nth-child(24),
+  .key-container button:nth-child(25),
+  .key-container button:nth-child(26),
+  .key-container button:nth-child(27),
+  .key-container button:nth-child(28),
+  .key-container button:nth-child(29),
+  .key-container button:nth-child(30) {
+    width: 27px;
+  }
+  .key-container button:nth-child(22),
+  .key-container button:nth-child(31) {
+    width: 45px;
+  }
+  .key-container button:nth-child(22) {
+    margin-left: 3px;
+  }
+}
 .grey-overlay {
   background-color: #3a3a3c !important;
   border: none !important;

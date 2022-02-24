@@ -6,6 +6,11 @@
   height: 51px;
   border-bottom: solid 1px #3a3a3c;
 }
+@media (max-width: 500px) {
+  .title-container {
+    width: 375px;
+  }
+}
 .title {
   font-weight: 700;
   font-size: 36px;
